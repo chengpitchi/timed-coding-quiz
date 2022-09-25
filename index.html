@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="./Assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./Assets/css/style.css" />
+    <title>Coding Quiz Challenge</title>
+    </head>
+
+    <body>
+        <header>
+            <div id="view-highscores"><a href="">View Highscores</a></div>
+            <div id="timer-text">Time: 0</div>
+        </header>
+
+        <section class="welcome-page">
+            <h1>Coding Quiz Challenge</h1>
+            <p>Try to answer the following code related questions within the time limit.  Keep in mind that incorrect answers will penalize your time by 10 seconds.</p>
+            <div id="input-group">
+                <button id="start-button">Start Quiz</button>
+            </div>
+        </section>
+
+        <section class="question-page">
+            <h2></h2>
+            <ol id="answer-list" >
+                <li data-option="1"></li>
+                <li data-option="2"></li>
+                <li data-option="3"></li>
+                <li data-option="4" ></li>
+            </ol>
+            <div id="#input-group">
+                <button id="confirm-button">Confirm</button>
+                <button id="next-button">Next Question</button>
+            </div>
+            <div id="result-message"></div>
+        </section>
+
+        <section class="result-page">
+            <h3>Quiz Completed!</h3>
+            <p id="total-question"></p>
+            <p id="correct-answer"></p> 
+            <p id="final-score"></p>
+            <div id="input-group">
+                <label for="name">Please input your name: </label>
+                <input type="name" name="name" id="name" />
+                <button id="submit-button">Submit</button>
+            </div>
+        </section>
+
+        <section class="high-score-page">
+            <h2>Highscores</h2>
+            <ol id="high-score-list"></ol>
+            <div id="#input-group">
+                <button id="goback-button">Go Back</button>
+                <button id="clear-hs-button">Clear Highscores</button>
+            </div>
+        </section>
+
+        <script src="assets/js/script.js"></script>
+    </body>
+</html>
