@@ -194,7 +194,7 @@ function nextQuestion(event) {
     if (!questions[questionIndex].answered) {
         //if the user skip the question, we assume the answer is wrong and deduct 10 seconds  
         if (confirm("You have not confirmed the answer yet.  Are you OK to proceed to next question?\nBeware that 10 seconds will be deducted if you click OK.")) {
-            timeLeft = timeLeft - 10; 
+            timeLeft = (timeLeft - 10 < 0) ? 0 : timeLeft - 10; 
         } else {
             confirmNext = false; 
         }
@@ -237,10 +237,11 @@ function checkAnswer(event) {
         resultMessage.setAttribute("style", "color:black"); 
         numOfCorrect++; 
     } else {
-        // if the answer is incorrect, deduct 10 seconds.
+        // if the answer is incorrect, deduct 10 seconds. 
         resultMessage.textContent = "Your answer is incorrect.  10 seconds deducted."
         resultMessage.setAttribute("style", "color:red"); 
-        timeLeft = timeLeft - 10;     
+        // if remaining time less than 10 secons, set the time left to 0. 
+        timeLeft = (timeLeft - 10 < 0) ? 0 : timeLeft - 10;     
     }
 }
 
